@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chinese Dishes</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="Chinese.css">
+</head>
+<body>
+    <!-- Sidebar Toggle Button -->
+    <div class="sidebar-toggle" id="sidebarToggle">&#9776;</div>
+
+    <!-- Sidebar -->
+    <div id="sideNav" class="side-nav">
+        <a href="javascript:void(0)" class="closebtn" id="closeSidebar">&times;</a>
+        <a href="Home.html">Home</a>
+        <a href="Login.html">Login</a>
+        <a href="Signup.html">Signup</a>
+        <a href="Menu.html">Menu</a>
+        <a href="MyCart.html">My Cart</a>
+        <a href="Pre.html">Previous Order History</a>
+        <a href="Feedback.html">Feedback</a>
+        <a href="Aboutus.html">About Us</a>
+        <a href="Contactus.html">Contact Us</a>
+    </div>
+       
+
+    <nav class="navbar">
+        <!-- Logo -->
+        <div class="logo">
+            <span class="word1">Disha</span>
+            <span class="word2">ki</span>
+            <span class="word3">Dishes</span>
+        </div>
+        
+        <!-- Search Bar -->
+        <div class="search-bar">
+            <i class="search-icon">&#128269;</i> <!-- Search Icon -->
+            <input type="text" id="searchInput" readonly>
+        </div>
+
+        <!-- Cart Button -->
+        <div class="cart-container">
+            <i class="cart-icon">&#128722;</i> <!-- Cart Icon -->
+            <span class="cart-count">3</span> <!-- Dynamic cart count -->
+        </div>
+
+     
+        
+
+    </nav>
+    <div class="container">
+        <div class="dish-box">
+            <!-- Food Item Name Overlay -->
+            <div class="food-name-overlay">Chowmein</div>
+            <img src="Images/Chowmein.jpg" alt="Chowmein" class="dish-img">
+            <div class="bookmark" onclick="toggleBookmark(this)">
+                <i class="fa fa-bookmark"></i>
+            </div>
+            <div class="heart-icon"><i class="fa fa-heart"></i></div>
+            <div class="overlay" onclick="openPopup('Chowmein')">
+                <span>View Details</span>
+            </div>
+        </div>
+        <div class="dish-box">
+            <!-- Food Item Name Overlay -->
+            <div class="food-name-overlay">Steam Momo</div>
+            <img src="Images/Momos.jpg" alt="Steam Momos" class="dish-img">
+            <div class="bookmark" onclick="toggleBookmark(this)">
+                <i class="fa fa-bookmark"></i>
+            </div>
+            <div class="heart-icon"><i class="fa fa-heart"></i></div>
+            <div class="overlay" onclick="openPopup('Steam Momos')">
+                <span>View Details</span>
+            </div>
+        </div>
+        <div class="dish-box">
+            <!-- Food Item Name Overlay -->
+            <div class="food-name-overlay">Fried Momos</div>
+            <img src="Images/FriedMomos.jpg" alt="Fried Momos" class="dish-img">
+            <div class="bookmark" onclick="toggleBookmark(this)">
+                <i class="fa fa-bookmark"></i>
+            </div>
+            <div class="heart-icon"><i class="fa fa-heart"></i></div>
+            <div class="overlay" onclick="openPopup('Fried Momos')">
+                <span>View Details</span>
+            </div>
+        </div><div class="dish-box">
+            <!-- Food Item Name Overlay -->
+            <div class="food-name-overlay">Spring Roll</div>
+            <img src="Images/SpringRoll.jpg" alt="SpringRoll" class="dish-img">
+            <div class="bookmark" onclick="toggleBookmark(this)">
+                <i class="fa fa-bookmark"></i>
+            </div>
+            <div class="heart-icon"><i class="fa fa-heart"></i></div>
+            <div class="overlay" onclick="openPopup('Spring Roll')">
+                <span>View Details</span>
+            </div>
+        </div>
+        <div class="dish-box">
+            <!-- Food Item Name Overlay -->
+            <div class="food-name-overlay">Manchurian</div>
+            <img src="Images/Manchurian.jpg" alt="Manchurian" class="dish-img">
+            <div class="bookmark" onclick="toggleBookmark(this)">
+                <i class="fa fa-bookmark"></i>
+            </div>
+            <div class="heart-icon"><i class="fa fa-heart"></i></div>
+            <div class="overlay" onclick="openPopup('Manchurian')">
+                <span>View Details</span>
+            </div>
+        </div>
+        <div class="dish-box">
+            <!-- Food Item Name Overlay -->
+            <div class="food-name-overlay">Paneer Chilli</div>
+            <img src="Images/ChillyPaneer.jpg" alt="Paneer Chilli" class="dish-img">
+            <div class="bookmark" onclick="toggleBookmark(this)">
+                <i class="fa fa-bookmark"></i>
+            </div>
+            <div class="heart-icon"><i class="fa fa-heart"></i></div>
+            <div class="overlay" onclick="openPopup('Paneer Chilli')">
+                <span>View Details</span>
+            </div>
+        </div>
+        <div class="dish-box">
+            <!-- Food Item Name Overlay -->
+            <div class="food-name-overlay">Hot and Sour Soup</div>
+            <img src="Images/Soup.jpg" alt="Hot and Sour Soup" class="dish-img">
+            <div class="bookmark" onclick="toggleBookmark(this)">
+                <i class="fa fa-bookmark"></i>
+            </div>
+            <div class="heart-icon"><i class="fa fa-heart"></i></div>
+            <div class="overlay" onclick="openPopup('Hot and Sour Soup')">
+                <span>View Details</span>
+            </div>
+        </div>
+        <div class="dish-box">
+            <!-- Food Item Name Overlay -->
+            <div class="food-name-overlay">Schezwan Fried Rice</div>
+            <img src="Images/Rice.jpg" alt="Schezwan Fried Rice" class="dish-img">
+            <div class="bookmark" onclick="toggleBookmark(this)">
+                <i class="fa fa-bookmark"></i>
+            </div>
+            <div class="heart-icon"><i class="fa fa-heart"></i></div>
+            <div class="overlay" onclick="openPopup('Schezwan Fried Rice')">
+                <span>View Details</span>
+            </div>
+        </div>
+        <div class="dish-box">
+            <!-- Food Item Name Overlay -->
+            <div class="food-name-overlay">Hakka Noodles</div>
+            <img src="Images/Noodles.jpg" alt="Hakka Noodles" class="dish-img">
+            <div class="bookmark" onclick="toggleBookmark(this)">
+                <i class="fa fa-bookmark"></i>
+            </div>
+            <div class="heart-icon"><i class="fa fa-heart"></i></div>
+            <div class="overlay" onclick="openPopup('Hakka Noodles')">
+                <span>View Details</span>
+            </div>
+        </div>
+        <div class="dish-box">
+            <!-- Food Item Name Overlay -->
+            <div class="food-name-overlay">Gobi Manchurian</div>
+            <img src="Images/Man.jpg" alt="Gobi Manchurian" class="dish-img">
+            <div class="bookmark" onclick="toggleBookmark(this)">
+                <i class="fa fa-bookmark"></i>
+            </div>
+            <div class="heart-icon"><i class="fa fa-heart"></i></div>
+            <div class="overlay" onclick="openPopup('Gobi Manchurian')">
+                <span>View Details</span>
+            </div>
+        </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Popup Modal -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup()">&times;</span>
+            <h2 id="popup-title"></h2>
+            <label for="time-slot">Time Slot:</label>
+            <select id="time-slot" class="select-field">
+                <option value="1st-lecture">1st Lecture</option>
+                <option value="2nd-lecture">2nd Lecture</option>
+                <option value="Water Break">Water Break</option>
+                <option value="3rd-lecture">3rd Lecture</option>
+                <option value="lunch-12-1">Lunch Slot 12:20-1:10</option>
+                <option value="lunch-1-2">Lunch Slot 1:10-2:00</option>
+                <option value="After 4:30">After 4:30</option>
+            </select>
+
+            <label for="remarks">Additional Instructions:</label>
+            <textarea id="remarks" placeholder="E.g., Less spicy, no onion"></textarea>
+
+            <label for="quantity">Number of Pieces:</label>
+            <input type="number" id="quantity" min="1" max="10" value="1">
+
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+    </div>
+
+    <script>
+    // Toggle the side navigation
+    function toggleNav() {
+            const sideNav = document.getElementById("sideNav");
+            if (sideNav.style.width === "250px") {
+                sideNav.style.width = "0"; // Close the sidebar
+            } else {
+                sideNav.style.width = "250px"; // Open the sidebar
+            }
+        }
+
+        // Add event listeners for toggling
+        document.getElementById("sidebarToggle").addEventListener("click", toggleNav);
+        document.getElementById("closeSidebar").addEventListener("click", () => {
+            document.getElementById("sideNav").style.width = "0"; // Close the sidebar
+        });
+        const searchSuggestions = ["Search Coffee", "Search Tea", "Search Chowmein", "Search Pasta", "Search Limca"];
+        let index = 0;
+        const searchInput = document.getElementById("searchInput");
+
+        // Immediately start cycling through search text
+        function cycleSearchText() {
+            searchInput.value = searchSuggestions[index];
+            index = (index + 1) % searchSuggestions.length;
+        }
+
+        // Start cycling right away
+        cycleSearchText();
+
+        // Change text every 3 seconds
+        setInterval(cycleSearchText, 3000);
+    // Toggle bookmark and show heart icon
+        function toggleBookmark(element) {
+            const heartIcon = element.parentElement.querySelector('.heart-icon');
+            const bookmarkIcon = element.querySelector('.fa-bookmark');
+        
+            if (heartIcon.style.display === 'block') {
+                heartIcon.style.display = 'none';
+                bookmarkIcon.style.color = '#444';
+            } else {
+                heartIcon.style.display = 'block';
+                bookmarkIcon.style.color = 'red';
+            }
+        }
+        
+        // Open popup
+        function openPopup(dishName) {
+            const popup = document.getElementById('popup');
+            const popupTitle = document.getElementById('popup-title');
+            popupTitle.textContent = dishName;
+            popup.style.display = 'flex';
+        
+            // Close popup on clicking outside
+            window.addEventListener('mousedown', closePopupOnOutsideClick);
+        }
+        
+        // Close popup
+        function closePopup() {
+            const popup = document.getElementById('popup');
+            popup.style.display = 'none';
+            window.removeEventListener('mousedown', closePopupOnOutsideClick);
+        }
+        
+        // Close popup when clicked outside
+        function closePopupOnOutsideClick(event) {
+            const popupContent = document.querySelector('.popup-content');
+            if (!popupContent.contains(event.target)) {
+                closePopup();
+            }
+        }
+        </script>
+</body>
+</html>

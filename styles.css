@@ -1,0 +1,397 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('Images/new.png');  /* Path to your background image */
+    background-size: cover;  /* Ensures the image covers the viewport */
+    background-position: center;  /* Centers the image */
+    background-attachment: fixed;  /* Keeps background fixed when scrolling */
+    position: relative;  /* To position the overlay and content properly */
+    min-height: 100vh;  /* Ensure the body takes the full height */
+}
+
+/* Dark Overlay */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);  /* Black with 50% opacity */
+    z-index: 1;  /* Ensure overlay is behind the content */
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: flex-end; /* Move everything to the right */
+    align-items: center;
+    background-color: antiquewhite;
+    padding: 20px 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.logo {
+    position: absolute;
+    left: 20px; /* Adjust for the left space */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.word1 {
+    font-size: 2rem;
+    font-family: fantasy;
+    font-weight: lighter;
+    color: #f4a261;
+}
+
+.word2 {
+    font-size: 1.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+    color: #2a9d8f;
+}
+
+.word3 {
+    font-size: 2rem;
+    font-family: fantasy;
+    font-weight: lighter;
+    color: #e76f51;
+}
+
+/* Cart Container */
+.cart-container {
+    position: relative;
+    margin-right: 80px; /* Adjust spacing from the right */
+    cursor: pointer;
+    color: #000; /* Default color */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+/* Cart Icon */
+.cart-icon {
+    font-size: 2rem; /* Icon size */
+    color: #2a9d8f; /* Match theme colors */
+    transition: transform 0.2s ease, color 0.2s ease; /* Smooth hover effect */
+}
+
+/* Cart Count (badge) */
+.cart-count {
+    position: absolute;
+    top: -5px;
+    right: -15px;
+    background-color: #e76f51;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 50%;
+    text-align: center;
+}
+
+/* Cart Hover Effect */
+.cart-container:hover .cart-icon {
+    transform: scale(1.2); /* Slight enlargement */
+    color: #f4a261; /* Lighter color on hover */
+}
+
+.search-bar {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input {
+    padding: 15px 10px 15px 40px;
+    font-size: 16px;
+    width: 250px;
+    border-radius: 15px;
+    border: 2px solid ghostwhite;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+    background-color: #fdfdfd;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar input:focus {
+    width: 350px;
+    background-color: burlywood;
+    border: 2px solid ghostwhite;
+}
+
+.search-icon {
+    position: absolute;
+    left: 10px;
+    font-size: 1.2em;
+    color: #585858;
+}
+
+
+/* Side Navigation (Sidenav) Styles */
+.side-nav {
+    z-index: 9999;
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow-x: hidden;
+    transition: width 0.0s ease-in-out; /* Smooth transition */
+    padding-top: 100px;
+}
+
+.side-nav a {
+    padding: 10px 10px 8px 32px;
+    display: block;
+    font-size: 20px;
+    text-decoration: none; /* Remove underline */
+    color: rgb(255, 255, 255); /* Default color */
+    transition: color 0.3s ease, font-size 0.3s ease; /* Smooth transition for color and font size */
+}
+
+.side-nav a:hover {
+    color: burlywood; /* Highlight color on hover */
+    font-size: 20.5px; /* Increase font size on hover */
+}
+
+.side-nav .closebtn {
+    position: absolute;
+    top: 15px;
+    right: 30px;
+    font-size: 40px;
+    margin-left: 40px;
+}
+
+/* Sidebar toggle button styles */
+.sidebar-toggle {
+    font-size: 40px;
+    cursor: pointer;
+    position: absolute;
+    right: 20px; /* Move to the right */
+    top: 15px;
+    z-index: 2; /* Make sure toggle button is above navbar */
+    color: rgb(0, 0, 0);
+}
+
+        /* Set body background */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Animation Container */
+        #animationContainer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            z-index: 9999;
+
+            /* Add background image */
+            background: url('./images/background.jpg') no-repeat center center/cover;
+        }
+
+        /* Add black overlay */
+        #animationContainer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9); /* Semi-transparent black overlay */
+            z-index: -1; /* Place behind content */
+        }
+
+        /* Loading Word Animation */
+        .loading-word {
+            display: flex;
+            margin-bottom: 20px;
+            animation: hideLoading 0.7s ease forwards;
+            animation-delay: 1.5s;
+        }
+
+        .loading-word span {
+            font-size: 2rem;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            color: white;
+            opacity: 0;
+            display: inline-block;
+            animation: fadeInLetter 0.3s ease forwards;
+        }
+
+        /* Sequential animation for each letter */
+        .loading-word span:nth-child(1) { animation-delay: 0s; }
+        .loading-word span:nth-child(2) { animation-delay: 0.1s; }
+        .loading-word span:nth-child(3) { animation-delay: 0.2s; }
+        .loading-word span:nth-child(4) { animation-delay: 0.3s; }
+        .loading-word span:nth-child(5) { animation-delay: 0.4s; }
+        .loading-word span:nth-child(6) { animation-delay: 0.5s; }
+        .loading-word span:nth-child(7) { animation-delay: 0.6s; }
+        .loading-word span:nth-child(8) { animation-delay: 0.7s; }
+        .loading-word span:nth-child(9) { animation-delay: 0.8s; }
+        .loading-word span:nth-child(10) { animation-delay: 0.9s; }
+
+        @keyframes fadeInLetter {
+            0% {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Hides Loading Word */
+        @keyframes hideLoading {
+            0% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            100% {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+
+        /* Disha ki Dishes Animation */
+        .logo-text {
+            font-size: 20rem;
+            display: flex;
+            gap: 10px;
+            opacity: 0;
+            animation: fadeInLogo 1.0s ease forwards;
+            animation-delay: 2.2s;
+        }
+
+        .logo-text .word1 {
+            font-family: fantasy;
+            font-size: 10rem;
+            font-weight: lighter;
+            color: #f4a261;
+        }
+
+        .logo-text .word2 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 8rem;
+            font-weight: lighter;
+            color: #2a9d8f;
+        }
+
+        .logo-text .word3 {
+            font-family: fantasy;
+            font-size: 10rem;
+            font-weight: lighter;
+            color: #e76f51;
+        }
+
+        @keyframes fadeInLogo {
+            0% {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Fade out the entire animation container */
+        @keyframes fadeOut {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+
+        /* Fade out animation container after all animations complete */
+        #animationContainer {
+            animation: fadeOut 1.5s ease forwards;
+            animation-delay: 3.5s;
+        }
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            max-width: 1400px;
+            margin-top: 120px;
+            margin-left: 70px;
+            margin-right: 50px;
+            z-index: 100;
+            overflow: hidden; /* Hides scrollbar */
+          }
+          
+          .carousel {
+            display: flex;
+            gap: 20px;
+            scroll-behavior: smooth;
+            overflow-x: auto;
+            border: none;
+            border-radius: none;
+            -ms-overflow-style: none; /* IE and Edge */
+            scrollbar-width: none; /* Firefox */
+            
+          }
+          
+          .carousel::-webkit-scrollbar {
+            display: none; /* Hide scrollbar in Chrome, Safari, and Opera */
+          }
+          
+          .carousel img {
+            flex-shrink: 0;
+            width: 200px;
+            height: 200px;
+            /* border: 0.5px solid ghostwhite; */
+            /* border-radius: 10px; */
+            object-fit: fill;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+          }
+          
+          .carousel img:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.9);
+            border: none;
+          }
+          
+          .scroll-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            border: none;
+            font-size: 24px;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+            z-index: 100;
+          }
+          
+          .scroll-btn.left {
+            left: 10px;
+          }
+          
+          .scroll-btn.right {
+            right: 10px;
+          }
+          
+          
+          
+      

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link rel="stylesheet" href="Menu.css">
+</head>
+<body>
+    <!-- Logo Section -->
+    <div class="logo">
+        <span class="word1">Disha</span>
+        <span class="word2">ki</span>
+        <span class="word3">Dishes</span>
+    </div>
+
+    <div class="back-home-container">
+        <a href="index.html" class="back-home-button" title="Back to Home">
+            <span class="arrow-icon">&larr;</span> <!-- Back arrow icon -->
+        </a>
+    </div>
+    
+
+    <!-- Team Section -->
+    <div class="team">
+        <div class="member">
+            <img src="Images/Deal.png" alt="Owner" class="owner-img">
+            <h3>Special Offers</h3>
+            <p>Super-Duper Deal!</p>
+        </div>
+        <div class="member">
+            <img src="Images/Combo.png" alt="Owner" class="owner-img">
+            <h3>Combos</h3>
+            <p>Perfect Combinations!</p>
+        </div>
+        <a href="Chinese.html">
+            <div class="member">
+                <img src="Images/12.jpg" alt="Owner" class="owner-img">
+                <h3>Chinese</h3>
+                <p>Crispy, Crazy~Chinese!</p>
+            </div>
+        </a>
+        
+        <div class="member">
+            <img src="Images/18.jpg" alt="Owner" class="owner-img">
+            <h3>Italian</h3>
+            <p>Pizza Passion!</p>
+        </div>
+        <div class="member">
+            <img src="Images/19.jpg" alt="Owner" class="owner-img">
+            <h3>Indian</h3>
+            <p>Desi Tadka!</p>
+        </div>
+        <div class="member">
+            <img src="Images/8.jpg" alt="Owner" class="owner-img">
+            <h3>Beverages</h3>
+            <p>Perfect lovers!</p>
+        </div>
+        <div class="member">
+            <img src="Images/Salad.jpg" alt="Owner" class="owner-img">
+            <h3>Salad</h3>
+            <p>Health Buddy!</p>
+        </div>
+        <div class="member">
+            <img src="Images/Chicken.jpg" alt="Owner" class="owner-img">
+            <h3>Non-Vegeterian</h3>
+            <p>Eat more Meat!</p>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>&copy; 2024 Disha ki Dishes. All Rights Reserved.</p>
+    </footer>
+    <script>
+        document.querySelector('.back-home-button').addEventListener('click', (e) => {
+    e.preventDefault();
+    window.location.href = 'Home.html'; // Adjust this to your home page path
+});
+
+    </script>
+</body>
+</html>

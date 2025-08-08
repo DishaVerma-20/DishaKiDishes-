@@ -1,0 +1,429 @@
+
+ /* Basic reset and layout */
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    
+    background-image: url('Images/new.png');  /* Path to your background image */
+    background-size: cover;  /* Ensures the image covers the viewport */
+    background-position: center;  /* Centers the image */
+    background-attachment: fixed;  /* Keeps background fixed when scrolling */
+    position: relative;  /* To position the overlay and content properly */
+    min-height: 100vh;  /* Ensure the body takes the full height */
+}
+
+/* Dark Overlay */
+body::before {
+    content: '';
+    position: absolute;
+    height: 110vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* background: linear-gradient(to right,rgb(28, 1, 1), Red,rgb(28,1,1)); */
+    background: rgba(0, 0, 0, 0.8); 
+    z-index: 1;  /* Ensure overlay is behind the content */
+}
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: flex-end; /* Move everything to the right */
+    align-items: center;
+    background-color: antiquewhite;
+    padding: 20px 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.logo {
+    position: absolute;
+    left: 20px; /* Adjust for the left space */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.word1 {
+    font-size: 2rem;
+    font-family: fantasy;
+    font-weight: lighter;
+    color: #f4a261;
+}
+
+.word2 {
+    font-size: 1.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+    color: #2a9d8f;
+}
+
+.word3 {
+    font-size: 2rem;
+    font-family: fantasy;
+    font-weight: lighter;
+    color: #e76f51;
+}
+
+/* Cart Container */
+.cart-container {
+    position: relative;
+    margin-right: 80px; /* Adjust spacing from the right */
+    cursor: pointer;
+    color: #000; /* Default color */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+/* Cart Icon */
+.cart-icon {
+    font-size: 2rem; /* Icon size */
+    color: #2a9d8f; /* Match theme colors */
+    transition: transform 0.2s ease, color 0.2s ease; /* Smooth hover effect */
+}
+
+/* Cart Count (badge) */
+.cart-count {
+    position: absolute;
+    top: -5px;
+    right: -15px;
+    background-color: #e76f51;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 50%;
+    text-align: center;
+}
+
+/* Cart Hover Effect */
+.cart-container:hover .cart-icon {
+    transform: scale(1.2); /* Slight enlargement */
+    color: #f4a261; /* Lighter color on hover */
+}
+
+.search-bar {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input {
+    padding: 15px 10px 15px 40px;
+    font-size: 16px;
+    width: 250px;
+    border-radius: 15px;
+    border: 2px solid ghostwhite;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+    background-color: #fdfdfd;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar input:focus {
+    width: 350px;
+    background-color: burlywood;
+    border: 2px solid ghostwhite;
+}
+
+.search-icon {
+    position: absolute;
+    left: 10px;
+    font-size: 1.2em;
+    color: #585858;
+}
+
+/* Side Navigation (Sidenav) Styles */
+.side-nav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 9999; /* Ensure side nav is above the navbar */
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow-x: hidden;
+    transition: width 0.0s ease-in-out; /* Smooth transition */
+    padding-top: 100px;
+}
+
+.side-nav a {
+    padding: 10px 10px 8px 32px;
+    display: block;
+    font-size: 20px;
+    text-decoration: none; /* Remove underline */
+    color: rgb(255, 255, 255); /* Default color */
+    transition: color 0.3s ease, font-size 0.3s ease; /* Smooth transition for color and font size */
+}
+
+.side-nav a:hover {
+    color: burlywood; /* Highlight color on hover */
+    font-size: 1.5em; /* Increase font size on hover */
+}
+
+.side-nav .closebtn {
+    position: absolute;
+    top: 15px;
+    right: 30px;
+    font-size: 40px;
+    margin-left: 40px;
+}
+
+
+/* Sidebar toggle button styles */
+.sidebar-toggle {
+    font-size: 40px;
+    cursor: pointer;
+    position: absolute;
+    right: 20px; /* Move to the right */
+    top: 15px;
+    z-index: 9999; /* Make sure toggle button is above navbar */
+    color: rgb(0, 0, 0);
+}
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    overflow-y: scroll;  /* Allow scrolling */
+}
+
+/* Hide the scrollbar in webkit-based browsers (Chrome, Safari) */
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* For Firefox, use this to hide the scrollbar */
+body {
+    scrollbar-width: none;  /* Firefox */
+}
+
+.container {
+    margin-top: 100px;
+    width: 85%;
+    margin: 20px auto;
+    display: grid;
+    /* overflow-y: hidden; */
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* 5 or 6 boxes per row */
+    gap: 45px; /* Space between boxes */
+}
+
+/* Optionally, to control the number of boxes per row more explicitly (5 or 6 boxes per row) */
+@media screen and (max-width: 1200px) {
+    .container {
+        grid-template-columns: repeat(5, 1fr); /* 5 boxes per row on larger screens */
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .container {
+        grid-template-columns: repeat(4, 1fr); /* 4 boxes per row on medium screens */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        grid-template-columns: repeat(3, 1fr); /* 3 boxes per row on small screens */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        grid-template-columns: repeat(2, 1fr); /* 2 boxes per row on very small screens */
+    }
+}
+
+
+.title {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    color: #333;
+}
+
+.dish-grid {
+    margin-top: 100px;
+    /* display: flex; */
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 35px;
+    /* margin-top: 50px; */
+}
+
+/* Dish Box */
+.dish-box {
+    border: 1px solid ghostwhite;
+    /* background: rgba( 220, 20, 60,0.3); */
+    /* background: rgba(49, 2, 2, 0.45); */
+    background: rgba( 222, 184, 135,0.6);
+    /* background: burlywood; */
+    margin-top: 40px;
+    width: 230px;
+    height: 230px;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    object-fit: auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 3;
+    /* border: 2px solid burlywood; */
+    
+}
+
+.dish-box:hover {
+    background: rgba( 222, 184, 135,0.3);
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    border: 2px solid crimson;
+}
+
+.dish-img {
+    margin-top: 25px;
+    margin-left: 30px;
+    width: 75%;
+    height: 75%;
+    object-fit: cover;
+}
+
+/* Bookmark and Heart Icon */
+.bookmark {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 3;
+    display: none;
+}
+
+.dish-box:hover .bookmark {
+    display: block;
+}
+
+.heart-icon {
+    position: absolute;
+    top: 10px;
+    left: 6px;
+    font-size: 1.5em;
+    color: rgb(255, 0, 0);
+    display: none;
+    z-index: 3;}
+    
+
+/* Overlay */
+.overlay {
+    font-family: cursive;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+}
+
+.dish-box:hover .overlay {
+    opacity: 1;
+}
+
+/* Popup */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    font-family: cursive;
+    background: #000000;
+    color: burlywood;
+    opacity: 0.8;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 2em;
+    cursor: pointer;
+    color: #ffffff;
+}
+
+.select-field,
+#remarks,
+#quantity {
+    color: rgb(0, 0, 0);
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    border: 2px solid burlywood;
+    border-radius: 5px;
+}
+
+.add-to-cart-btn {
+    background-color: #009f0b;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #c0392b;
+}
+/* Food Name Overlay on Top of Image */
+.food-name-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 70%;
+
+    margin-right: 15px;
+    margin-left: 30px;
+    margin-top: 198px;
+    /* background-color: rgba(13, 11, 11, 0.4);  */
+    /* Slightly transparent black */
+    color: #340000;
+    font-size: 15px;
+    /* font-weight: bold; */
+    text-align: center;
+    padding: 10px 0;
+    font-family: 'Georgia', serif; /* Classy font style */
+    /* border-radius: 10px 10px 0 0; Rounded corners for elegance */
+    z-index: 2;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
+}

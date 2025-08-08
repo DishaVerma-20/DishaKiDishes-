@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="Login.css">
+</head>
+<body>
+    <div class="login-container">
+        <h1>Welcome Back</h1>
+        <form>
+            <input type="text" placeholder="Username" required>
+            <input type="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+        <p class="footer-text">Don't have an account? <a href="Signup.html">Sign Up</a></p>
+    </div>
+    <div class="home-link-container">
+        <a href="Home.html" class="home-link" title="Go to Home">
+            <i class="fas fa-home"></i>Home
+        </a>
+    </div>
+    <script>document.querySelector('.home-link').addEventListener('click', (e) => {
+        e.preventDefault();
+        window.location.href = 'Home.html'; // Adjust if your home link differs
+    });
+    </script>
+        
+</body>
+</html>

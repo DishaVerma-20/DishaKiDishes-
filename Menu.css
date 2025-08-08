@@ -1,0 +1,177 @@
+/* General Reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    font-family: 'Arial', sans-serif;
+}
+a {
+    text-decoration: none; /* Removes underline */
+    color: inherit; /* Ensures the link color matches the surrounding text */
+}
+
+
+/* Background Styling */
+body {
+    background-image: url('Images/d.png'); /* Path to your background image */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Dark Overlay */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+/* Prevent Overlay on Logo, Content, and Footer */
+.logo, .main-content, .team, .footer {
+    z-index: 2;
+    position: relative;
+}
+
+/* Logo Section */
+.logo {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.word1 {
+    font-size: 3rem;
+    font-family: fantasy;
+    font-weight: lighter;
+    color: #f4a261;
+}
+
+.word2 {
+    font-size: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+    color: #2a9d8f;
+}
+
+.word3 {
+    font-size: 3rem;
+    font-family: fantasy;
+    font-weight: lighter;
+    color: #e76f51;
+}
+
+/* Team Section */
+.team {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Allows wrapping for multiple members */
+    margin: 40px auto;
+    gap: 30px;
+}
+
+.member {
+    border: 2px solid crimson;
+    padding: 25px;
+    border-radius: 50%;
+    text-align: center;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.7); /* Set consistent background color */
+}
+
+.owner-img {
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.member h3 {
+    font-family: cursive;
+    font-size: 1.6rem;
+    color: #ce850f;
+    margin-bottom: 10px;
+}
+
+.member p {
+    font-style: oblique;
+    font-size: 1.1rem;
+    color: #6c0101;
+}
+
+.member:hover {
+    transform: translateY(-10px);
+    border: 2px solid rgb(0, 214, 207);
+    background-color: rgba(255, 255, 255, 0.3); /* More noticeable hover effect */
+}
+
+.member:hover h3 {
+    color: crimson;
+}
+
+/* Footer Section */
+.footer {
+    background: #000000;
+    color: white;
+    text-align: center;
+    padding: 10px 10px;
+    font-size: 1.2rem;
+    margin-top: auto;
+    width: 100%;
+}
+
+/* Footer Link */
+.footer a {
+    color: #f4a261;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+/* Back Button Container */
+.back-home-container {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 100;
+}
+
+/* Back Button Style */
+.back-home-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #2bdcc7; /* Button color */
+    color: white; /* Arrow color */
+    font-size: 1.8rem;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Makes it circular */
+    text-decoration: none; /* Removes underline */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Adds shadow */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth effects */
+}
+
+/* Arrow Icon Style */
+.arrow-icon {
+    display: inline-block;
+    font-weight: bold;
+}
+
+/* Hover Effect */
+.back-home-button:hover {
+    background-color: #f4a261; /* Changes button color on hover */
+    transform: scale(1.1); /* Slightly enlarges button */
+}

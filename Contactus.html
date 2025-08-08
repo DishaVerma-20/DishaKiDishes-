@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="Contactus.css">
+</head>
+<body>
+
+    <!-- Logo Section -->
+    <div class="logo">
+        <span class="word1">Disha</span>
+        <span class="word2">ki</span>
+        <span class="word3">Dishes</span>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="contact-section">
+        <!-- Leave a Message Section -->
+        <div class="contact-box">
+            <h3>Leave a Message</h3>
+            <form class="contact-form" action="submit_form.php" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+
+        <!-- Instagram Section -->
+        <div class="contact-box">
+            <h3>Instagram</h3>
+            <p>Follow us for the latest updates!</p>
+            <a href="https://www.instagram.com/_ms.disha_/profilecard/" target="_blank">
+                <img src="Images/Instagram.png" alt="Instagram" width="80">
+            </a>
+        </div>
+
+        <!-- LinkedIn Section -->
+        <div class="contact-box">
+            <h3>LinkedIn</h3>
+            <p>Connect with us on LinkedIn!</p>
+            <a href="https://www.linkedin.com/in/disha-verma-a37bb4322?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">
+                <img src="Images/Linkedin.png" alt="LinkedIn" width="80">
+            </a>
+        </div>
+    </div>
+
+    <div class="home-link-container">
+        <a href="Home.html" class="home-link" title="Go to Home">
+            <i class="fas fa-home"></i> Home
+        </a>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>&copy; 2024 Disha ki Dishes. All Rights Reserved.</p>
+    </footer>
+    <script>document.querySelector('.home-link').addEventListener('click', (e) => {
+        e.preventDefault();
+        window.location.href = 'Home.html'; // Adjust if your home link differs
+    });
+    </script>
+        
+</body>
+</html>

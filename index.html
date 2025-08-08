@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disha ki Dishes</title>
+    <meta name="Description" content="Ufff! Roz-roz lambi-lambi lines mein khade rehna? Bohot ho gaya yaar! Kabhi registrar office ki line, toh kabhi canteen ki bheed... Pura college life toh bas in lines mein nikal jaata hai! Lekin ab tension nahi lene ka haii beeduu! Presenting 'Disha ki Dishes!' – jahan wait karo BYE-BYE aur taste karo HI-FI! No more standing in queues, bas khaane ka mazaa aur time ka faida! Say hello to hassle-free, tasty treats – only at 'Disha ki Dishes!'">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div id="animationContainer">
+        <!-- Loading Animation -->
+        <div class="loading-word">
+            <span>L</span>
+            <span>o</span>
+            <span>a</span>
+            <span>d</span>
+            <span>i</span>
+            <span>n</span>
+            <span>g</span>
+            <span>.</span>
+            <span>.</span>
+            <span>.</span>
+        </div>
+
+        <!-- Logo Text Animation -->
+        <div class="logo-text">
+            <span class="word1">Disha</span>
+            <span class="word2">ki</span>
+            <span class="word3">Dishes</span>
+        </div>
+    </div>
+
+    <!-- Sidebar Toggle Button -->
+    <div class="sidebar-toggle" id="sidebarToggle">&#9776;</div>
+
+    <!-- Sidebar -->
+    <div id="sideNav" class="side-nav">
+        <a href="javascript:void(0)" class="closebtn" id="closeSidebar">&times;</a>
+        <a href="Home.html">Home</a>
+        <a href="Login.html">Login</a>
+        <a href="Signup.html">Signup</a>
+        <a href="Menu.html">Menu</a>
+        <a href="MyCart.html">My Cart</a>
+        <a href="Pre.html">Previous Order History</a>
+        <a href="Feedback.html">Feedback</a>
+        <a href="Aboutus.html">About Us</a>
+        <a href="Contactus.html">Contact Us</a>
+    </div>
+
+    <nav class="navbar">
+        <!-- Logo -->
+        <div class="logo">
+            <span class="word1">Disha</span>
+            <span class="word2">ki</span>
+            <span class="word3">Dishes</span>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="search-bar">
+            <i class="search-icon">&#128269;</i> <!-- Search Icon -->
+            <input type="text" id="searchInput" readonly>
+        </div>
+
+        <!-- Cart Button -->
+        <div class="cart-container">
+            <i class="cart-icon">&#128722;</i> <!-- Cart Icon -->
+            <span class="cart-count">3</span> <!-- Dynamic cart count -->
+        </div>
+    </nav>
+
+    <div class="carousel-container">
+        <button class="scroll-btn left">&#10094;</button>
+        <div class="carousel">
+            <img src="Images/9.jpg"  alt="Image 2">
+            <img src="Images/12.jpg"  alt="Image 3">
+            <img src="Images/10.jpg"  alt="Image 4">
+            <img src="Images/14.jpg"  alt="Image 5">
+            <img src="Images/16.jpg"  alt="Image 6">
+            <img src="Images/32.jpg"  alt="Image 7">
+            <img src="Images/24.jpg"  alt="Image 8">
+            <img src="Images/25.jpg"  alt="Image 9">
+            <img src="Images/19.jpg"  alt="Image 10">
+            <!-- <img src="Images/9.jpg" data-hover="Images/21.jpg" alt="Image 2">
+            <img src="Images/12.jpg" data-hover="Images/13.jpg" alt="Image 3">
+            <img src="Images/10.jpg" data-hover="Images/11.jpg" alt="Image 4">
+            <img src="Images/14.jpg" data-hover="Images/15.jpg" alt="Image 5">
+            <img src="Images/16.jpg" data-hover="Images/17.jpg" alt="Image 6">
+            <img src="Images/32.jpg" data-hover="Images/33.jpg" alt="Image 7">
+            <img src="Images/24.jpg" data-hover="Images/18.jpg" alt="Image 8">
+            <img src="Images/25.jpg" data-hover="Images/26.jpg" alt="Image 9">
+            <img src="Images/19.jpg" data-hover="Images/22.jpg" alt="Image 10"> -->
+        </div>
+        <button class="scroll-btn right">&#10095;</button>
+    </div>
+
+    <script>
+        const carousel = document.querySelector('.carousel');
+        const leftBtn = document.querySelector('.scroll-btn.left');
+        const rightBtn = document.querySelector('.scroll-btn.right');
+        const images = document.querySelectorAll('.carousel img');
+
+        // Scroll functionality for carousel
+        function scrollLeft() {
+            // Scroll by a fixed width of an image, so it scrolls one image at a time
+            carousel.scrollBy({ left: -220, behavior: 'smooth' }); // Adjusted scroll distance to match image size
+        }
+
+        function scrollRight() {
+            // Scroll by a fixed width of an image, so it scrolls one image at a time
+            carousel.scrollBy({ left: 220, behavior: 'smooth' }); // Adjusted scroll distance to match image size
+        }
+
+        leftBtn.addEventListener('click', scrollLeft);
+        rightBtn.addEventListener('click', scrollRight);
+
+        // Hover effect for changing images
+        images.forEach((img) => {
+            const originalSrc = img.getAttribute('src'); // Store original image source
+
+            img.addEventListener('mouseenter', () => {
+                const hoverImage = img.getAttribute('data-hover');
+                if (hoverImage) {
+                    img.setAttribute('src', hoverImage); // Change to hover image
+                }
+            });
+
+            img.addEventListener('mouseleave', () => {
+                img.setAttribute('src', originalSrc); // Revert back to original image
+            });
+        });
+
+        // Auto change image every 10 seconds
+        let currentImageIndex = 0;
+
+        function changeImage() {
+            images.forEach((img, index) => {
+                const hoverImage = img.getAttribute('data-hover');
+                const originalSrc = img.getAttribute('src');
+
+                // Only change the image if it's the current one
+                if (index === currentImageIndex) {
+                    img.setAttribute('src', hoverImage || originalSrc); // Set hover image if available
+                } else {
+                    img.setAttribute('src', originalSrc); // Revert to original for others
+                }
+            });
+
+            // Increment the index for the next image
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+        }
+
+        // Change images every 10 seconds
+        setInterval(changeImage, 10000);
+
+        const searchSuggestions = ["Search Coffee", "Search Tea", "Search Chowmein", "Search Pasta", "Search Limca"];
+        let index = 0;
+        const searchInput = document.getElementById("searchInput");
+
+        // Immediately start cycling through search text
+        function cycleSearchText() {
+            searchInput.value = searchSuggestions[index];
+            index = (index + 1) % searchSuggestions.length;
+        }
+
+        // Start cycling right away
+        cycleSearchText();
+
+        // Change text every 3 seconds
+        setInterval(cycleSearchText, 3000);
+
+        // Toggle the side navigation
+        function toggleNav() {
+            const sideNav = document.getElementById("sideNav");
+            if (sideNav.style.width === "250px") {
+                sideNav.style.width = "0"; // Close the sidebar
+            } else {
+                sideNav.style.width = "250px"; // Open the sidebar
+            }
+        }
+
+        // Add event listeners for toggling
+        document.getElementById("sidebarToggle").addEventListener("click", toggleNav);
+        document.getElementById("closeSidebar").addEventListener("click", () => {
+            document.getElementById("sideNav").style.width = "0"; // Close the sidebar
+        });
+    </script>
+</body>
+
+</html>
